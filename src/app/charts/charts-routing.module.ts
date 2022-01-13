@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { BarsComponent } from './pages/bars/bars.component';
 import { DoubleBarsComponent } from './pages/double-bars/double-bars.component';
 import { CircularComponent } from './pages/circular/circular.component';
+import { CircularHttpComponent } from './pages/circular-http/circular-http.component';
 
 const routes: Routes = [
   {
@@ -22,7 +24,7 @@ const routes: Routes = [
       },
       {
         path:'circular-http',
-        component: CircularComponent
+        component: CircularHttpComponent
       },
       {
         path:'**',
