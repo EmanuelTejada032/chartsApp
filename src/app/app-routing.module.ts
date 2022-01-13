@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 
-
+const routes:Routes = [
+  {
+    path: "charts",
+    loadChildren: () => import('./charts/charts.module').then(module => module.ChartsModule) 
+  },
+  {
+    path: "**",
+    redirectTo: 'charts'
+  }
+]
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    RouterModule.forRoot(routes)
+  ],
+  exports:[
+    RouterModule
   ]
 })
 export class AppRoutingModule { }
