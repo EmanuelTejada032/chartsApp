@@ -1,1 +1,17 @@
-<p>circular-http works!</p>
+<div class="row" *ngIf="doughnutChartLabels.length === 0; else chartDiv">
+    <p class="primary">Loading</p>
+</div>
+
+<div class="row">
+    <div class="col">
+        <ng-template #chartDiv>
+            <div style="display: block">
+                <canvas baseChart
+                  [data]="doughnutChartData"
+                  [type]="doughnutChartType"
+                  >
+                </canvas>
+              </div>
+        </ng-template>
+    </div>
+  </div>
